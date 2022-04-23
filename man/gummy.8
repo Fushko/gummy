@@ -1,0 +1,120 @@
+.TH GUMMY 1 2022-4-23 Linux gummy
+
+.SH NAME
+	gummy - brightness/temperature adjustments
+
+.SH OPTIONS
+	-h
+
+	--help
+
+		Print this help message and exit
+
+	-v
+
+	--version
+
+		Print version and exit
+
+	-s
+
+	--screen INT:INT in [0 - 99]
+
+		Screen on which to act. If omitted, any changes will be applied on all screens.
+
+	-b
+
+	--brightness INT:INT in [5 - 100]
+
+		Set screen brightness percentage.
+
+	-B
+
+	--brt-mode INT:INT in [0 - 2]
+
+		Brightness mode. 0 = manual, 1 = screenshot, 2 = ALS (if available)
+
+	-N
+
+	--brt-auto-min INT:INT in [5 - 100]
+
+		Set minimum automatic brightness.
+
+	-M
+
+	--brt-auto-max INT:INT in [5 - 100]
+
+		Set maximum automatic brightness.
+
+	-L
+
+	--brt-auto-offset INT:INT in [-100 - 100]
+
+		Set automatic brightness offset. Higher = brighter image.
+
+	--brt-auto-speed INT:INT in [1 - 10000]
+
+		Set brightness adaptation speed in milliseconds. Default is 1000 ms.
+
+	--screen-poll-rate INT:INT in [1 - 5000]
+
+		How often to check for screen image changes in milliseconds. Only relevant for screens with brightness mode 1.
+
+	--als-poll-rate INT:INT in [1 - 30000]
+
+		How often to check for ambient light changes in milliseconds. Only relevant for screens with brightness mode 2.
+
+	-t
+
+	--temperature INT:INT in [2000 - 6500]
+
+		Set screen temperature in kelvins.
+
+		Setting this option will disable automatic temperature if enabled.
+
+	-T
+
+	--temp-mode INT:INT in [0 - 1]
+
+		Temperature mode. 0 for manual, 1 for automatic.
+
+	-j
+
+	--temp-day INT:INT in [2000 - 6500]
+
+		Set day time temperature in kelvins.
+
+	-k
+
+	--temp-night INT:INT in [2000 - 6500]
+
+		Set night time temperature in kelvins.
+
+	-y
+
+	--sunrise-time TEXT
+
+		Set sunrise time in 24h format, for example `06:00`.
+
+	-u
+
+	--sunset-time TEXT
+
+		Set sunset time in 24h format, for example `16:30`.
+
+	-i
+
+	--temp-adaptation-time INT
+
+		Temperature adaptation time in minutes.
+
+		For example, if this option is set to 30 min. and the sunset time is at 16:30,
+
+		temperature starts adjusting at 16:00, going down gradually until 16:30.
+
+.SH EXIT STATUS
+	Unset
+
+
+.SH SEE ALSO
+	gummy(1), gummy(2)
